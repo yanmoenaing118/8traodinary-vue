@@ -1,58 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
+import Layout from "./components/layout/index.vue";
 
 </script>
 
 <template>
-  <header>
-    
-
-    <div class="wrapper">
-     
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-        <RouterLink to="/works">Works</RouterLink>
-      </nav>
-    </div>
-  </header>
-
+  
+<Layout>
   <RouterView />
+</Layout>
+  
 </template>
 
 <style>
 @import '@/assets/base.css';
 
-
-header {
- 
-}
-
-.logo {
- 
-}
-
-
-
-nav {
-
-}
-
-nav a.router-link-exact-active {
-  
-}
-
-nav a.router-link-exact-active:hover {
-
-}
-
-nav a {
-
-}
-
-nav a:first-of-type {
-
-}
 
 </style>
