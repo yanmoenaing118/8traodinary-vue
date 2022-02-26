@@ -1,4 +1,5 @@
 <script setup>
+import { onMounted } from "@vue/runtime-core";
 import Capabilities from "./../components/home/Capabilities.vue";
 import Works from "./../components/home/Works.vue";
 
@@ -59,6 +60,15 @@ const works = [
     title: "Good brother's chemical company limited",
   },
 ];
+
+
+onMounted(() => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 </script>
 
 <template>

@@ -1,5 +1,15 @@
 <script setup>
+import { onMounted } from "@vue/runtime-core";
 import Banner from "./../components/banner/Banner.vue";
+
+
+onMounted(() => {
+  window.scroll({
+    top: 0,
+    left: 0,
+    behavior: "smooth",
+  });
+});
 </script>
 
 <template>

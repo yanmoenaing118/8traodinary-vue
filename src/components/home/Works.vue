@@ -36,6 +36,9 @@ const modules = [Pagination];
         
       </Swiper>
     </div>
+    <div class="all">
+      <button>View all works</button>
+    </div>
   </section>
 </template>
 
@@ -58,4 +61,22 @@ h1 {
     width: 100%;
 }
 
+.all {
+  display: flex;
+  justify-content: center;
+  padding: var(--space-11) 0;
+}
+button {
+  background-color: #d64021;
+  border: none;
+  color: #fff;
+  padding: var(--space-8) var(--space-11);
+  border-radius: 30px;
+  font-size: 1.4rem;
+  cursor: pointer;
+}
+
+button:focus {
+  border: 1px solid #fff;
+}
 </style>
