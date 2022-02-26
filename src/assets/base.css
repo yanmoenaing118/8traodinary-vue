@@ -16,6 +16,7 @@
 --space-10: 24px;
 --space-11: 48px;
 
+--section-p: 10rem;
 }
 
 
@@ -26,6 +27,7 @@
   margin: 0;
   position: relative;
   font-weight: normal;
+  padding: 0;
 }
 
 body {
@@ -42,4 +44,8 @@ body {
 
 #app {
   position: relative;
+}
+
+[v-cloak]{
+  display: none;
 }
