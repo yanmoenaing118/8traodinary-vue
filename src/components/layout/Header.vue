@@ -1,5 +1,6 @@
+  if (!headerRef) return;
 <script setup>
-import {RouterLink} from "vue-router";
+import { RouterLink } from "vue-router";
 import { ref } from "@vue/reactivity";
 import { onMounted } from "@vue/runtime-core";
 import Navigation from "./header/Navigation.vue";
@@ -7,35 +8,71 @@ import Navigation from "./header/Navigation.vue";
 const headerRef = ref(null);
 const headerHeight = ref("124px");
 
-const observer = new IntersectionObserver(observerCallback, {
-  threshold: 0.5
+const smallHeaderRef = ref(null)
+const showSmallHeader = ref(false);
+
+const largeHeaderObserver = new IntersectionObserver(observerCallback("lg"), {
+  threshold: 0.5,
+});
+
+const smallHeaderObserver = new IntersectionObserver(observerCallback("sm"), {
+  threshold: 0.5,
 });
 
 onMounted(() => {
-  if(!headerRef) return;
-  observer.observe(headerRef.value);
-})
+  if(!headerRef || !smallHeaderRef) return;
+  // largeHeaderObserver.observe(headerRef.value);
+  smallHeaderObserver.observe(smallHeaderRef.value);
+});
 
-function observerCallback(entries) {
-  entries.forEach(entry => {
-    const header = entry.target;
-    if( entry.isIntersecting) {
-      headerHeight.value = '124px';
-    } else {
-      headerHeight.value = '40px';
-    }
-  })
+function observerCallback(which) {
+  return which === "lg"
+    ? largeHeaderObserverCallback
+    : smallHeaderObserverCallback;
 }
 
-</script>
+function largeHeaderObserverCallback(entries) {
+  entries.forEach((entry) => {
+    const header = entry.target;
+    if (entry.isIntersecting) {
+      headerHeight.value = "124px";
+    } else {
+      headerHeight.value = "40px";
+    }
+  });
+}
 
-<template>
-  <header ref="headerRef" :style="{  '--header-height': headerHeight }">
+function smallHeaderObserverCallback(entries) {
+  entries.forEach(entry => {
+    const header = entry.target;
+    if(entry.isIntersecting) {
+      
+    }
+  })
+
+}
+
+const temp = `  <header  ref="headerRef" :style="{  '--header-height': headerHeight }">
     <div class="wrapper">
       <div class="logo">
          <RouterLink to="/"><img src="https://midas.venuslab.co/logo.png" alt="Midas Creative Footer Logo"></RouterLink>
       </div>
       <Navigation />
+    </div>
+  </header>`;
+</script>
+
+<template>
+  <header ref="smallHeaderRef" class="small-header">
+    <div class="wrapper">
+      <div class="logo-small">
+        <RouterLink to="/"
+          ><img
+            src="https://midas.venuslab.co/logo.png"
+            alt="Midas Creative Footer Logo"
+        /></RouterLink>
+      </div>
+      <Navigation color="black" />
     </div>
   </header>
 </template>
@@ -52,7 +89,24 @@ header {
   transition: all 0.4s ease-out;
 }
 
+.small-header {
+  height: 50px;
+  background-color: #fff;
+  color: #000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
 
+.logo-small {
+  width: 120px;
+}
+
+.logo-small img {
+  width: 100%;
+  height: auto;
+}
 
 .wrapper {
   max-width: var(--max-width);

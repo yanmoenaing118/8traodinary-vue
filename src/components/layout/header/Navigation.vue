@@ -1,10 +1,14 @@
 <script setup>
 import { RouterLink } from "vue-router";
+
+const props = defineProps({
+  color: String
+})
 </script>
 
 <template>
   <nav>
-    <ul>
+    <ul  :style="{color: color}">
       <li>
         <RouterLink to="/">Home</RouterLink>
       </li>
@@ -43,7 +47,7 @@ a {
   height: 100%;
   padding: 0 var(--space-7);
   text-decoration: none;
-  color: #fff;
+  color: inherit;
   text-transform: uppercase;
   font-weight: bolder;
 }

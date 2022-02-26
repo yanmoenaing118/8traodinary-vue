@@ -4,36 +4,42 @@ import Works from "./../components/home/Works.vue";
 
 const capabilities = [
   {
-    id:1,
+    id: 1,
     title: "branding",
-    description: "It’s more than just a logo, font, and colours! Without strong branding that lays the foundation for your marketing activities, you'll just be more white noise to the average consumer."
+    description:
+      "It’s more than just a logo, font, and colours! Without strong branding that lays the foundation for your marketing activities, you'll just be more white noise to the average consumer.",
   },
   {
     id: 2,
     title: "Consultancy",
-    description: "Feeling stumped on where to start or go next? Let us help connect the dots with our expert insights and data-driven methodology."
+    description:
+      "Feeling stumped on where to start or go next? Let us help connect the dots with our expert insights and data-driven methodology.",
   },
   {
     id: 3,
     title: "Creative",
-    description: "Be it through on-ground activations, digital or out-of-home media, we get your business to where it needs to be, the 8traordinary way."
+    description:
+      "Be it through on-ground activations, digital or out-of-home media, we get your business to where it needs to be, the 8traordinary way.",
   },
   {
     id: 4,
     title: "Digital",
-    description: "Transform your customer experience from touchpoints to journeys with digital solutions such as a high-converting website, mobile app, voice, VR, AR, or through interactive games."
+    description:
+      "Transform your customer experience from touchpoints to journeys with digital solutions such as a high-converting website, mobile app, voice, VR, AR, or through interactive games.",
   },
   {
     id: 5,
     title: "Content",
-    description: "From concept to production, we craft influential content and execute them impeccably. Our in-house creators have a natural affinity for words, images, and numbers. Need stunning visuals or copywriting that converts? We've got you covered."
+    description:
+      "From concept to production, we craft influential content and execute them impeccably. Our in-house creators have a natural affinity for words, images, and numbers. Need stunning visuals or copywriting that converts? We've got you covered.",
   },
   {
     id: 6,
     title: "Social",
-    description: "Reach, engage and sell on Facebook, Instagram, LinkedIn, TikTok and other social media platforms. We do the work, you enjoy the results - full account management & content creation inclusive."
-  }
-]
+    description:
+      "Reach, engage and sell on Facebook, Instagram, LinkedIn, TikTok and other social media platforms. We do the work, you enjoy the results - full account management & content creation inclusive.",
+  },
+];
 
 const works = [
   {
@@ -46,14 +52,13 @@ const works = [
   },
   {
     id: 3,
-    title: "San Lwin"
+    title: "San Lwin",
   },
   {
     id: 4,
-    title: "Good brother's chemical company limited"
-  }
-]
-
+    title: "Good brother's chemical company limited",
+  },
+];
 </script>
 
 <template>
@@ -67,12 +72,11 @@ const works = [
       ></video>
     </div>
   </section>
-  <Capabilities :list="capabilities"/>
+  <Capabilities :list="capabilities" />
   <Works :list="works" />
 </template>
 
 <style scoped>
-
 .hero {
   height: 100vh;
   margin-top: -124px;

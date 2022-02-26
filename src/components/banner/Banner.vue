@@ -24,6 +24,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  overflow: hidden;
 }
 
 img {
