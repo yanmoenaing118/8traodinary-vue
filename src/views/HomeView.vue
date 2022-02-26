@@ -57,7 +57,7 @@ const works = [
 </script>
 
 <template>
-  <section>
+  <section class="hero">
     <div class="video-bg">
       <video
         src="https://midas-api.venuslab.co/storage/video_thumbnails/00cdb98d-5d8b-4c68-8bb6-c898a0eec529.mp4"
@@ -72,8 +72,13 @@ const works = [
 </template>
 
 <style scoped>
-.video-bg {
+
+.hero {
   height: 100vh;
+  margin-top: -124px;
+}
+.video-bg {
+  height: 100%;
 }
 .video-bg {
   width: 100%;

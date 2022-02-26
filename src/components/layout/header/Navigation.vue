@@ -44,6 +44,8 @@ a {
   padding: 0 var(--space-7);
   text-decoration: none;
   color: #fff;
+  text-transform: uppercase;
+  font-weight: bolder;
 }
 
 a:hover {
