@@ -1,16 +1,8 @@
 <script setup>
-import { onMounted } from "@vue/runtime-core";
 import Banner from "./../components/banner/Banner.vue";
 import Works from "./../components/work/Works.vue";
-
-
-onMounted(() => {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
+import ScrollTop from "./../lib/scrollTop";
+ScrollTop();
 </script>
 
 <template>

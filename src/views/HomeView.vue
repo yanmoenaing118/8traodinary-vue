@@ -1,5 +1,5 @@
 <script setup>
-import { onMounted } from "@vue/runtime-core";
+import ScrollTop from "./../lib/scrollTop";
 import Capabilities from "./../components/home/Capabilities.vue";
 import Works from "./../components/home/Works.vue";
 
@@ -61,14 +61,7 @@ const works = [
   },
 ];
 
-
-onMounted(() => {
-  window.scroll({
-    top: 0,
-    left: 0,
-    behavior: "smooth",
-  });
-});
+ScrollTop();
 </script>
 
 <template>

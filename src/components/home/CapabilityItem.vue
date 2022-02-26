@@ -38,8 +38,11 @@ const props = defineProps({
   width: 60px;
   height: 60px;
   grid-column: 1 / 1;
+  color: var(--primary);
 }
-
+svg {
+  fill: currentColor;
+}
 .item strong {
     display: block;
     grid-column: 2 / -1;
@@ -49,6 +52,7 @@ const props = defineProps({
     font-size: 28px;
     font-weight: bold;
     text-transform: capitalize;
+    color: var(--primary);
 }
 
 .item p {
@@ -56,5 +60,6 @@ const props = defineProps({
     grid-row: 3 / -1;
     line-height: 1.5;
     font-size: 1.3rem;
+    color: var(--dark);
 }
 </style>
